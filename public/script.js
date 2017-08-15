@@ -1,12 +1,48 @@
-console.log("Sanity Check: JS is working!");
+console.log("Sanity Check: JS is working!")
 
 $(document).ready(function(){
 
-getPokemon()
+  // getPokemon()
 
+  $('#get-btn').on('click', function() {
+    getPokemon()
+  })
 
+  $('#new-pokemon-form').on('submit', function(event) {
+    event.preventDefault()
+    var newPokemonData = $(this).serialize()
+    $(this).trigger("reset")
+    $.ajax({
+      method: 'POST',
+      url: 'http://mutably.herokuapp.com/pokemon/',
+      data: newPokemonData,
+      success: addPokemon
+    })
+  })
 
-});
+  $('document').on('click', '.edit-btn', function() {
+
+  })
+
+  $('document').on('click', '.save-btn', function() {
+    const id = $(this).data('id')
+    $.ajax({
+      method: 'PUT',
+      url: `http://mutably.herokuapp.com/pokemon/${id}`,
+      success: updatePokemon
+    })
+  })
+
+  $('document').on('click', '.delete-btn', function() {
+    const id = $(this).data('id')
+    $.ajax({
+      method: 'DELETE',
+      url: `http://mutably.herokuapp.com/pokemon/${id}`,
+      success: deletePokemon
+    })
+  })
+
+})
 
 function getPokemon() {
   $.ajax({
@@ -20,8 +56,9 @@ function getPokemon() {
             <p class="name">Name: ${pokemon.name}</p>
             <p class="pokedex">Pokedex: ${pokemon.pokedex}</p>
             <p class="evolves_from">Evolves from: ${pokemon.evolves_from}</p>
-            <button>Edit</button>
-            <button>Save</button>
+            <button class="edit-btn">Edit</button>
+            <button class="save-btn">Save</button>
+            <button class="delete-btn">Delete</button>
           </li>
         `)
     })
@@ -29,7 +66,7 @@ function getPokemon() {
 }
 
 function addPokemon() {
-
+  getPokemon()
 }
 
 function deletePokemon() {

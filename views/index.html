@@ -14,34 +14,34 @@
       </nav>
       <div class="panel panel-default">
         <div class="panel-heading">Pokémon</div>
-        <button>Get all Pokemon</button>
-        <div class="new-pokemon-form">
-          <form>
+        <button id="get-btn">Get Pokémon</button>
+        <div class="new-pokemon">
+          <h2>Add a new Pokémon!</h2>
+          <form id="new-pokemon-form">
             <div class="form-group">
-              <label for="pokemon-name">Pokémon's Name: </label>
-              <input type="text" name="pokemon-name" placeholder="Pokémon's name">
+              <label for="name">Pokémon's Name: </label>
+              <input type="text" name="name" id="name" placeholder="Name">
             </div>
             <div class="form-group">
-              <label for="pokemon-pokedex">Pokédex: </label>
-              <input type="text" name="pokemon-name" placeholder="Pokédex">
+              <label for="pokedex">Pokédex: </label>
+              <input type="text" name="pokedex" id="pokedex" placeholder="Pokédex">
             </div>
             <div class="form-group">
-              <label for="pokemon-evolves-from">Evolves from: </label>
-              <input type="text" name="pokemon-evolves-from" placeholder="Evolves from">
+              <label for="evolves_from">Evolves from: </label>
+              <input type="text" name="evolves_from" id="evolves_from" placeholder="Evolves from">
             </div>
             <div class="form-group">
-              <label for="pokemon-image">Image URL: </label>
-              <input type="text" name="pokemon-image" placeholder="Image URL">
+              <label for="image">Image URL: </label>
+              <input type="text" name="image" id="image" placeholder="Image URL">
             </div>
-            <button>Submit new Pokémon</button>
+            <button type="submit" class="btn">Submit new Pokémon</button>
           </form>
         </div>
-        <ul class="list-group">
-          <!-- your resource items here -->
-        </ul>
-      </div>
-      <div class="panel panel-default">
-        <form>
+        <div id="all-pokemon">
+          <ul class="list-group">
+            <!-- your resource items here -->
+          </ul>
+        </div>
       </div>
     </div>
   </body>
