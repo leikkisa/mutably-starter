@@ -13,10 +13,35 @@
         <a class="navbar-brand" href="/">Mutably Front-end</a>
       </nav>
       <div class="panel panel-default">
-        <div class="panel-heading">[Your Chosen Resource]</div>
-        <ul class="list-group">
-          <!-- your resource items here -->
-        </ul>
+        <div class="panel-heading">Pokémon</div>
+        <button id="get-btn">Get Pokémon</button>
+        <div class="new-pokemon">
+          <h2>Add a new Pokémon!</h2>
+          <form id="new-pokemon-form">
+            <div class="form-group">
+              <label for="name">Pokémon's Name: </label>
+              <input type="text" name="name" id="name" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <label for="pokedex">Pokédex: </label>
+              <input type="text" name="pokedex" id="pokedex" placeholder="Pokédex">
+            </div>
+            <div class="form-group">
+              <label for="evolves_from">Evolves from: </label>
+              <input type="text" name="evolves_from" id="evolves_from" placeholder="Evolves from">
+            </div>
+            <div class="form-group">
+              <label for="image">Image URL: </label>
+              <input type="text" name="image" id="image" placeholder="Image URL">
+            </div>
+            <button type="submit" class="btn">Submit new Pokémon</button>
+          </form>
+        </div>
+        <div id="all-pokemon">
+          <ul class="list-group">
+            <!-- your resource items here -->
+          </ul>
+        </div>
       </div>
     </div>
   </body>
